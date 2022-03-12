@@ -1,0 +1,11 @@
+{
+  "name": "udemy-nest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:yprodev/udemy-nest.git",
+  "author": "Yaroslav Prodanchuk <yaroslav.prodanchuk.external@ryd.one>",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/cli": "^8.2.2"
+  }
+}

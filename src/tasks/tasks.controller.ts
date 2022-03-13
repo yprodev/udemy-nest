@@ -16,6 +16,11 @@ export class TasksController {
         return this.tasksService.getTaskById(id);
     }
 
+    @Get()
+    getTasks(@Query() filterDto: GetTasksFilterDto): Promise<Task[]> {
+        return this.tasksService.getTasks(filterDto);
+    }
+
     @Post()
     createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
         return this.tasksService.createTask(createTaskDto);
@@ -35,20 +40,4 @@ export class TasksController {
         const { status } = updateTaskStatusDto;
         return this.tasksService.updateTaskStatus(id, status)
     }
-
-    /*
-    @Get()
-    getTasks(@Query() filterDto: GetTasksFilterDto): Task[] {
-        // if we have any filters defined, call tasksService.getTasksWithFilters()
-        // otherwise, just get all tasks
-        if (Object.keys(filterDto).length) {
-            return this.tasksService.getTasksWithFilters(filterDto);
-        } else {
-            return this.tasksService.getAllTasks();
-        }
-    }
-
-
-
-    */
 }
